@@ -24,7 +24,9 @@ export const NftCard = ({ id, name = 'Sun-Glass', endTime, imageUrl, bid }: NftI
       </div>
 
       <div className={styles.content}>
-        <h3 className={styles.title}>{name}</h3>
+        <h3 className={styles.title} title={name}>
+          {name}
+        </h3>
 
         <div className={styles.footer}>
           <div className="">

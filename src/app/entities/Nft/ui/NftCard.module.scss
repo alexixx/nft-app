@@ -65,6 +65,10 @@
   .title {
     font-size: rem(16);
     font-weight: 600;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     @media (min-width: $breakpoint-lg) {
       font-size: $text-lg;
     }
