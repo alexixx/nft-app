@@ -20,7 +20,13 @@ export const NftCard = ({ id, name = 'Sun-Glass', endTime, imageUrl, bid }: NftI
     <article className={styles.card}>
       <div className={styles.imageWrapper}>
         <div className={styles.time}>{timeLeft}</div>
-        <Image alt="nft-preview" fill src={imageUrl} className={styles.image} />
+        <Image
+          alt="nft-preview"
+          fill
+          src={imageUrl}
+          className={styles.image}
+          sizes="(max-width: 1023px) 190px, 253px"
+        />
       </div>
 
       <div className={styles.content}>
