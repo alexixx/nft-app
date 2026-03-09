@@ -1,0 +1,43 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/variables' as *;
+@use '@/shared/styles/mixins' as *;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $font-accent;
+
+  padding-top: rem(50);
+
+  background-color: $color-gray-100;
+  overflow: hidden;
+  @media (min-width: $breakpoint-lg) {
+    padding-top: rem(70);
+  }
+}
+
+.container {
+  @include container;
+}
+
+.title {
+  font-size: rem(30);
+  font-weight: 600;
+  color: #c5c5c5;
+  line-height: 1.1;
+  text-wrap: nowrap;
+  //   max-width: rem(400);
+  @media (min-width: $breakpoint-md) {
+    font-size: rem(32);
+  }
+  @media (min-width: $breakpoint-lg) {
+    font-size: rem(46);
+  }
+}
+
+.sliderWrapper {
+  position: relative;
+  min-width: 100%;
+  overflow: hidden;
+}

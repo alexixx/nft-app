@@ -1,0 +1,106 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/variables' as *;
+@use '@/shared/styles/mixins' as *;
+
+.footer {
+  padding: 0 24px;
+  padding-top: rem(52);
+  padding-bottom: rem(40);
+  background: $color-black;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-left: auto;
+  margin-right: auto;
+  gap: rem(26);
+  max-width: $container-width;
+  @media (min-width: $breakpoint-md) {
+    gap: rem(40);
+    padding: 60px 69px;
+  }
+  @media (min-width: $breakpoint-lg) {
+    gap: rem(56);
+    padding: 0;
+    padding-top: 88px;
+    padding-bottom: 97px;
+  }
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: rem(32);
+  border-bottom: 1px solid #818181;
+  padding-bottom: rem(48);
+  @media (min-width: $breakpoint-md) {
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding-bottom: rem(21);
+  }
+  @media (min-width: $breakpoint-lg) {
+    padding-bottom: rem(25);
+    max-width: $container-width;
+  }
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: rem(7);
+
+  .logoIcon {
+    width: 46px;
+    fill: #fff;
+    @media (min-width: $breakpoint-lg) {
+      width: 46px;
+    }
+    @media (min-width: $breakpoint-xl) {
+      width: 65px;
+    }
+  }
+  span {
+    font-family: $font-accent;
+    color: #fff;
+    font-weight: 600;
+    font-size: $text-lg;
+    @media (min-width: $breakpoint-lg) {
+      font-size: rem(30);
+    }
+  }
+  @media (min-width: $breakpoint-lg) {
+    gap: rem(10);
+  }
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: rem(30);
+  font-size: $text-base;
+  color: $color-gray-500;
+  text-transform: uppercase;
+
+  @media (min-width: $breakpoint-md) {
+    align-items: center;
+    flex-direction: row;
+    gap: rem(50);
+    text-transform: capitalize;
+    font-size: rem(13);
+  }
+  @media (min-width: $breakpoint-lg) {
+    gap: rem(70);
+    font-size: $text-md;
+  }
+}
+
+.copyright {
+  font-size: $text-base;
+  font-weight: 500;
+  color: #999999;
+  @media (min-width: $breakpoint-md) {
+    font-size: rem(12);
+  }
+  @media (min-width: $breakpoint-lg) {
+    font-size: rem(17);
+  }
+}

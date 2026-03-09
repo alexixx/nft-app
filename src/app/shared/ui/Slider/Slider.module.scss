@@ -1,0 +1,124 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/variables' as *;
+@use '@/shared/styles/mixins' as *;
+
+.sliderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: rem(50);
+  @media (min-width: $breakpoint-lg) {
+    padding-bottom: rem(70);
+  }
+}
+
+.sliderWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  cursor: grab;
+
+  :global(.keen-slider) {
+    min-width: 100% !important;
+    padding: rem(50) 0;
+    @media (min-width: $breakpoint-lg) {
+      padding: rem(70) 0;
+    }
+  }
+  :global(.keen-slider__slide) {
+    box-shadow: 28px 9px 45px 0 rgba(199, 199, 199, 0.6);
+    border-radius: $radius-xl;
+    overflow: hidden;
+    width: fit-content !important;
+    min-height: fit-content !important;
+    height: fit-content;
+    @media (min-width: $breakpoint-lg) {
+      box-shadow: rem(38) rem(12) rem(60) 0 rgba(199, 199, 199, 0.6);
+      border-radius: $radius-2xl;
+    }
+  }
+}
+.navigation {
+  display: flex;
+  align-items: center;
+
+  width: rem(124);
+  height: rem(48);
+
+  border-radius: $radius-lg;
+  background-color: #fcfcfd;
+  box-shadow: rem(0) rem(32) rem(26) rem(-19) rgba(15, 15, 15, 0.122);
+  @media (min-width: $breakpoint-lg) {
+    width: rem(166);
+    height: rem(64);
+
+    border-radius: 17px;
+    box-shadow: rem(0) rem(43) rem(34) rem(-25.87) rgba(15, 15, 15, 0.122);
+  }
+  .divider {
+    height: 18px;
+    width: 2px;
+    background-color: #e6e8ec;
+    @media (min-width: $breakpoint-lg) {
+      height: 24px;
+    }
+  }
+}
+.arrow {
+  //   display: flex;
+  flex: 1;
+  align-self: stretch;
+
+  overflow: hidden;
+
+  &.arrowLeft {
+    padding-left: 21px;
+    &:active .arrowIcon {
+      transform: translateX(-5px);
+      transition: all 0.2s;
+    }
+    @media (min-width: $breakpoint-lg) {
+      padding-left: 28px;
+      &:hover .arrowIcon {
+        transform: translateX(-5px);
+      }
+
+      transition: all 0.2s;
+    }
+  }
+  &.arrowRight {
+    //  justify-items: end;
+    padding-right: 21px;
+    border-radius: 19px;
+    &:active .arrowIcon {
+      transform: translateX(5px);
+      transition: all 0.2s;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      padding-right: 28px;
+      &:hover .arrowIcon {
+        transform: translateX(5px);
+        transition: all 0.2s;
+      }
+    }
+  }
+
+  &.arrowDisabled {
+    opacity: 0.3;
+  }
+}
+.arrowIcon {
+  width: 18px;
+  transition: all 0.2s;
+  &.arrowLeft {
+    margin-right: auto;
+  }
+  &.arrowRight {
+    margin-left: auto;
+  }
+  @media (min-width: $breakpoint-lg) {
+    width: 24px;
+  }
+}

@@ -1,0 +1,156 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/variables' as *;
+@use '@/shared/styles/mixins' as *;
+
+.header {
+  z-index: $z-header;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+
+  padding: rem(30);
+
+  &.sсrolled {
+    background: $color-white;
+  }
+  .container {
+    @include container;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    @media (min-width: $breakpoint-md) {
+      justify-content: start;
+    }
+    @media (max-width: $breakpoint-md) {
+      transform: none !important;
+    }
+  }
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    padding: rem(33) rem(67);
+  }
+  @media (min-width: $breakpoint-lg) {
+    padding: rem(46) rem(97);
+  }
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: rem(7);
+  .logoSvg {
+    width: 46px;
+    fill: $color-black;
+    @media (min-width: $breakpoint-md) {
+      width: 38px;
+    }
+    @media (min-width: $breakpoint-lg) {
+      width: 53px;
+    }
+  }
+  span {
+    font-family: $font-accent;
+    font-size: $text-lg;
+    font-weight: 600;
+    color: black;
+    @media (min-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+}
+
+.nav {
+  display: none;
+  align-items: center;
+
+  @media (min-width: $breakpoint-md) {
+    display: flex;
+    gap: rem(50);
+    margin-left: rem(66);
+
+    a {
+      font-size: $text-md;
+      color: $color-gray-600;
+      transition: color $transition-base;
+
+      &::after {
+        display: block;
+        content: attr(data-text);
+        font-weight: 700;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        user-select: none;
+        pointer-events: none;
+      }
+
+      &:hover {
+        color: #000000;
+        font-weight: 700;
+      }
+    }
+
+    @media (min-width: $breakpoint-xl) {
+      // margin-left: rem(86);
+    }
+  }
+}
+
+.burger {
+  display: block;
+  // Стили для иконки бургера...
+
+  @media (min-width: $breakpoint-md) {
+    display: none; // Прячем на десктопе
+  }
+}
+
+.mobileMenu {
+  z-index: 99;
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  width: 100%;
+  background: $color-white;
+  overflow: hidden;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  margin-left: rem(30);
+  margin-right: rem(30);
+  padding-top: rem(34);
+
+  border-top: 1px solid #cbcbcb;
+  a {
+    display: block;
+    font-size: rem(40);
+
+    font-weight: 500;
+    color: $color-gray-600;
+    text-decoration: none;
+
+    text-transform: uppercase;
+  }
+}
+
+// .mobileMenu {
+//   height: 100vh;
+//   padding-top: rem(44);
+//   margin-top: rem(30);
+
+//   border-top: 1px solid #cbcbcb;
+// }
+// .mobileNav {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: start;
+//   gap: rem(20);
+
+//   font-size: rem(40);
+//   color: $color-gray-600;
+//   font-weight: 500;
+// }

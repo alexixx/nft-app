@@ -1,0 +1,54 @@
+@use '@/shared/styles/functions' as *;
+
+// Цвета
+$color-white: #f9f9f9;
+$color-black: #141416;
+$color-gray-100: #f1f1f1;
+$color-gray-400: #94a3b8;
+$color-gray-500: #b9b9b9;
+$color-gray-600: #606060;
+
+$bg-primary: $color-white;
+$bg-secondary: $color-gray-100;
+$bg-dark: $color-black;
+
+// Text
+$text-main: $color-black;
+$text-muted: $color-gray-400;
+$text-inv: $color-white;
+
+// Font-size
+$text-xs: rem(11);
+$text-base: rem(14);
+$text-md: rem(18);
+$text-lg: rem(22);
+$text-xxl: clamp(#{rem(32)}, 5vw, #{rem(64)});
+
+// Accents
+$action-bg: $color-black;
+$action-hover: #1f1f1f;
+
+// Radius
+$radius-xs: 7.5px;
+$radius-sm: 9px;
+$radius-md: 10px;
+$radius-base: 12px;
+$radius-lg: 13px;
+$radius-xl: 18px;
+$radius-2xl: 24px;
+
+// Breakpoints
+$breakpoint-sm: 375px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1440px;
+$breakpoint-2xl: 1920px;
+
+// Fonts
+$font-main: var(--font-inter), sans-serif;
+$font-accent: var(--font-poppins), sans-serif;
+
+$container-width: 1246px;
+$transition-base: 0.3s ease;
+
+$z-header: 100;
