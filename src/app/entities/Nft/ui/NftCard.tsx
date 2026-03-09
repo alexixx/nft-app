@@ -4,16 +4,9 @@ import styles from './NftCard.module.scss';
 import EthLogo from '@/shared/assets/icons/Eth.svg';
 import { formatTimeLeft } from '@/shared/lib/time';
 import { Button } from '@/shared/ui';
+import { NftItem } from '@/entities/Nft';
 
-interface NftCardProps {
-  id: string;
-  name: string;
-  endTime: string;
-  imageUrl: string;
-  bid: string;
-}
-
-export const NftCard = ({ id, name = 'Sun-Glass', endTime, imageUrl, bid }: NftCardProps) => {
+export const NftCard = ({ id, name = 'Sun-Glass', endTime, imageUrl, bid }: NftItem) => {
   const [timeLeft, setTimeLeft] = useState(formatTimeLeft(endTime));
 
   useEffect(() => {
